@@ -1,0 +1,13 @@
+<div [class.fullscreen]="fullscreen" [ngClass]="'toolbar-1'"
+     class="header-image-wrapper">
+  <div [class.bg-anime]="bgImageAnimate" [style.background-image]="bgImage" class="bg"></div>
+  <div class="mask"></div>
+
+  <div [class.home-page]="isHomePage" [class.offset-bottom]="contentOffsetToTop"
+       [style.min-height.px]="contentMinHeight"
+       class="header-image-content" fxLayout="column"
+       fxLayoutAlign="center center">
+    <h1 *ngIf="title" class="title">{{title | translate}}</h1>
+    <p *ngIf="desc" class="desc">{{desc | translate}}</p>
+  </div>
+</div>

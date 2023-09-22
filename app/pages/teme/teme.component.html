@@ -1,0 +1,57 @@
+<app-header-image [backgroundImage]="'assets/images/others/forumbackground.jpg'"
+                  [bgImageAnimate]="true"
+                  [contentMinHeight]="200"
+                  [contentOffsetToTop]="false"
+                  [desc]="desc">
+</app-header-image>
+
+<div class="px-3">
+
+  <div class="theme-container">
+
+    <mat-sidenav-container class="all-teme mt-3">
+      <mat-sidenav-content ngClass.gt-sm="distance">
+        <div class="teme-wrapper mt-0" fxLayout="row wrap">
+          <div class="px-2 pb-2 pt-0" fxFlex="100">
+            <app-teme-toolbar (onChangeCount)="changeCount($event)"
+                              (onChangeSorting)="changeSorting($event)"
+                              (onSidenavToggle)="sidenav.toggle()"
+                              [showSidenavToggle]="!sidenavOpen">
+            </app-teme-toolbar>
+          </div>
+          <div class="p-2" fxFlex="100" fxLayoutAlign="center center">
+            <mat-chip-listbox [ngClass]="'ml-2'">
+              <mat-chip-option class="uppercase ws-nowrap" color="warn" disableRipple="true" highlighted
+                               selectable="false">
+                {{ pagination?.total }} {{'STRANICE.HOME.FOUND' | translate}}
+              </mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+
+          <div *ngFor="let tema of teme" [fxFlex]="100" class="item">
+            <app-tema-item [fullWidthPage]="true" [tema]="tema" [viewColChanged]="true"
+                           [viewType]="'list'"></app-tema-item>
+          </div>
+
+          <div *ngIf="teme?.length > 0" class="p-2" fxFlex="100" fxLayoutAlign="center center">
+            <mat-paginator (page)="onPageChange($event)"
+                           [length]="pagination?.total"
+                           [pageSize]="pagination?.perPage"
+                           class="w-100 mat-elevation-z1">
+            </mat-paginator>
+          </div>
+
+        </div>
+
+
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+  </div>
+
+</div>
+
+
+<!--<app-clients></app-clients>-->
+
+<!--<app-get-in-touch></app-get-in-touch>-->

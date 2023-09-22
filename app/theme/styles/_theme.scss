@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@import './variables';
+
+$custom-typography: mat.define-typography-config(
+  $font-family: $font-family,
+  $body-1: mat.define-typography-level(14px, 20px, 400),
+  $button: mat.define-typography-level(14px, 14px, 500),
+);
+@include mat.all-component-typographies($custom-typography);
+@include mat.core();
+
+@import './theme-reset';
+
+.app {
+  &.pink {
+    @import "./skins/pink";
+    @include mat.all-component-colors($pink-theme);
+    @include theme-reset($pink-theme);
+  }
+}

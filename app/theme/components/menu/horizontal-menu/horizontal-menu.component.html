@@ -1,0 +1,27 @@
+<ng-container *ngFor="let menuItem of menuItems">
+
+  <a *ngIf="menuItem.routerLink && !menuItem.hasSubMenu" [routerLinkActiveOptions]="{exact:true}"
+     [routerLink]="[menuItem.routerLink]"
+     mat-button routerLinkActive="horizontal-active-link">
+    <span>{{ menuItem.title | translate }}</span>
+  </a>
+
+  <a *ngIf="menuItem.href && !menuItem.hasSubMenu" [attr.href]="menuItem.href || ''"
+     [attr.target]="menuItem.target || ''" mat-button>
+    <span>{{ menuItem.title | translate }}</span>
+  </a>
+
+  <a *ngIf="menuItem.hasSubMenu && menuItem.parentId == 0" [matMenuTriggerFor]="menu" mat-button>
+    <span>{{ menuItem.title | translate }}</span>
+    <mat-icon class="caret" iconPositionEnd>arrow_drop_down</mat-icon>
+  </a>
+
+  <a *ngIf="menuItem.hasSubMenu && menuItem.parentId != 0" [matMenuTriggerFor]="menu" mat-menu-item>
+    <span>{{ menuItem.title | translate }}</span>
+  </a>
+
+  <mat-menu #menu="matMenu" class="horizontal-sub-menu">
+    <app-horizontal-menu [menuParentId]="menuItem.id"></app-horizontal-menu>
+  </mat-menu>
+
+</ng-container>

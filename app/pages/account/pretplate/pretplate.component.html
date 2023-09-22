@@ -1,0 +1,46 @@
+<mat-form-field appearance="outline" class="w-100">
+  <input (keyup)="applyFilter($event.target.value)" autocomplete="off" matInput
+         placeholder="{{'COMPONENTS.FILTER.FILTER_P' | translate}}">
+</mat-form-field>
+<div class="table-wrapper">
+  <table [dataSource]="dataSource" class="w-100" mat-table matSort>
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{'COMPONENTS.PRETPLATE.COL.ID' | translate}}</th>
+      <td *matCellDef="let tema" [routerLink]="['/teme', tema.id ]" class="pointer"
+          mat-cell> {{tema.id}} </td>
+    </ng-container>
+    <!-- Image Column -->
+    <ng-container matColumnDef="image">
+      <th *matHeaderCellDef mat-header-cell> {{'COMPONENTS.PRETPLATE.COL.TYPE' | translate}}</th>
+      <td *matCellDef="let tema" [routerLink]="['/teme', tema.id ]" class="pointer" mat-cell><img
+        [src]="tema.gallery[0].small" [style.width.px]="100"
+        class="d-block"></td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{'COMPONENTS.PRETPLATE.COL.TITLE' | translate}}</th>
+      <td *matCellDef="let tema" [routerLink]="['/teme', tema.id ]" class="pointer" mat-cell><span
+        class="tema-name">{{tema.title | translate}}</span></td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef mat-header-cell> {{'COMPONENTS.PRETPLATE.COL.REMOVE' | translate}}</th>
+      <td *matCellDef="let tema" mat-cell>
+        <button (click)="remove(tema)" class="remove" color="warn" mat-icon-button
+                matTooltip="{{'TOOLTIP.REMOVE' | translate}}">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let tema; columns: displayedColumns;" mat-row>
+    </tr>
+  </table>
+  <p *ngIf="dataSource?.data.length === 0"
+     class="py-5 mb-0 text-center">{{'COMPONENTS.PRETPLATE.COL.ERRORL.EMPTY' | translate}}</p>
+</div>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

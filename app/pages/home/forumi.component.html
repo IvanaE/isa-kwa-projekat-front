@@ -1,0 +1,47 @@
+<app-header-image [backgroundImage]="'assets/images/others/forumbackground.jpg'"
+                  [bgImageAnimate]="true"
+                  [contentOffsetToTop]="true"
+                  [desc]="'STRANICE.HOME.DESC'"
+                  [fullscreen]="false"
+                  [isHomePage]="true"
+                  [title]="'STRANICE.HOME.TITLE'">
+</app-header-image>
+
+<div class="px-3">
+
+  <div class="theme-container">
+
+    <div class="teme-wrapper" fxLayout="row wrap">
+      <div class="p-2" fxFlex="100">
+        <app-teme-toolbar (onChangeCount)="changeCount($event)"
+                          (onChangeSorting)="changeSorting($event)"
+                          [isHomePage]="true"></app-teme-toolbar>
+      </div>
+      <div class="p-2" fxFlex="100" fxLayoutAlign="center center">
+        <mat-chip-listbox [ngClass]="'ml-2'">
+          <mat-chip-option class="uppercase ws-nowrap" color="warn" disableRipple="true" highlighted selectable="false">
+            {{ pagination?.total }} {{'STRANICE.HOME.FOUND' | translate}}
+          </mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+      <div *ngFor="let tema of forumi" [fxFlex]="33.3" class="item">
+        <app-forum-item [tema]="tema"></app-forum-item>
+      </div>
+      <div *ngIf="forumi?.length" class="p-2 mt-2" fxFlex="100" fxLayoutAlign="center center">
+        <app-load-more [step]="2"></app-load-more>
+      </div>
+
+      <div *ngIf="forumi?.length == 0" [style.min-height.px]="200" fxFlex="100" fxLayoutAlign="center center">
+        <mat-spinner *ngIf="!message"></mat-spinner>
+        <mat-chip-listbox *ngIf="message">
+          <mat-chip-option class="uppercase ws-nowrap" color="warn" disableRipple="true" highlighted selectable="false">
+            {{message | translate}}
+          </mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

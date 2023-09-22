@@ -1,0 +1,69 @@
+<div class="px-3">
+  <div class="theme-container">
+
+    <mat-sidenav-container class="single-tema mt-3">
+      <mat-sidenav #sidenav (openedChange)="onOpenedChange()" [mode]="sidenavOpen ? 'side' : 'over'"
+                   [opened]="sidenavOpen"
+                   autoFocus="false" position="end">
+        <button (click)="sidenav.close()" class="close" color="warn" fxHide="false" fxHide.gt-sm="true" mat-mini-fab>
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-sidenav>
+      <mat-sidenav-content ngClass.gt-sm="distance">
+        <mat-card class="p-3" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+          <div>
+            <h2 class="uppercase" ngClass.xs="text-center">{{tema?.naziv | translate}}</h2>
+            <p class="address mb-0" fxLayout="row" fxLayoutAlign.xs="center">
+              <a href="/forumi/{{tema?.forum?.id}}" mat-button>
+                <mat-icon class="text-muted">forum</mat-icon>
+                {{tema?.forum.naziv | translate}}</a>
+              <a></a>
+            </p>
+          </div>
+          <div *ngIf="tema" class="control-icons">
+            <button (click)="subscribeTo()" [disabled]="isSubscribed()" mat-button
+                    matTooltip="{{'TOOLTIP.SUBSCRIBE_TO' | translate}}">
+              <mat-icon class="m-0">favorite_border</mat-icon>
+            </button>
+          </div>
+          <button (click)="sidenav.toggle()" *ngIf="!sidenavOpen" mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </mat-card>
+
+        <mat-card class="p-5 mt-5">
+          <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title
+              class="uppercase">{{tema?.objave?.length > 0 ? "Objave" : "Nema objava"}}</mat-card-title>
+          </mat-card-header>
+          <div class="divider"></div>
+          <mat-list class="reviews mt-3">
+            <mat-list-item *ngFor="let objava of tema?.objave" class="h-100">
+              <h3 fxLayoutAlign="start center">
+                <span class="fw-500">{{objava.vremePostavljanja | date : 'medium'}}</span>
+              </h3>
+              <p class="text">{{objava.sadrzaj}}</p>
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+        <div class="divider"></div>
+        <form (ngSubmit)="onCommentFormSubmit(commentForm?.value)" *ngIf="this.loginService.isLoggedIn()"
+              [formGroup]="commentForm" class="comment-form mt-5" fxLayout="row wrap"
+              fxLayoutAlign="space-between">
+          <div class="p-2" fxFlex="100">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Sadržaj</mat-label>
+              <textarea formControlName="review" matInput placeholder="Objava" required rows="5"></textarea>
+              <mat-error *ngIf="commentForm?.controls.review.errors?.required">Sadržaj je obavezan</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="text-center w-100" fxFlex="100">
+            <button class="uppercase" color="primary" mat-raised-button type="submit">{{'BTN.SUBMIT' | translate}}</button>
+          </div>
+        </form>
+
+
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

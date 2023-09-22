@@ -1,0 +1,65 @@
+<div class="p-3">
+  <div class="theme-container">
+
+    <div class="my-3" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card [style.max-width.px]="500" class="p-3">
+        <div class="text-center" fxLayout="column" fxLayoutAlign="center center">
+          <h1 class="uppercase">Register</h1>
+          <a class="w-100" color="accent" mat-button routerLink="/login">Already have an account? Sign in!</a>
+        </div>
+        <form (ngSubmit)="onRegisterFormSubmit(registerForm.value)" [formGroup]="registerForm">
+          <mat-form-field appearance="outline" class="w-100 mt-2">
+            <mat-icon class="mr-1 text-muted" matPrefix>person</mat-icon>
+            <mat-label>Username</mat-label>
+            <input formControlName="username" matInput placeholder="Username" required>
+            <mat-error *ngIf="registerForm.controls.username.errors?.required">Username is required</mat-error>
+            <mat-error *ngIf="registerForm.controls.username.hasError('minlength')">Username isn't long enough, minimum
+              of 6 characters
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100 mt-1">
+            <mat-icon class="mr-1 text-muted" matPrefix>email</mat-icon>
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput placeholder="Email" required>
+            <mat-error *ngIf="registerForm.controls.email.errors?.required">Email is required</mat-error>
+            <mat-error *ngIf="registerForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100 mt-1">
+            <mat-icon class="mr-1 text-muted" matPrefix>lock</mat-icon>
+            <mat-label>Password</mat-label>
+            <input [type]="hide ? 'password' : 'text'" formControlName="password" matInput minlength="6"
+                   placeholder="Password" required
+                   type="password">
+            <mat-error *ngIf="registerForm.controls.password.errors?.required">Password is required</mat-error>
+            <mat-error *ngIf="registerForm.controls.password.hasError('minlength')">Password isn't long enough, minimum
+              of 6 characters
+            </mat-error>
+            <button (click)="hide = !hide" class="text-muted" mat-icon-button matSuffix type="button">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100 mt-1">
+            <mat-icon class="mr-1 text-muted" matPrefix>lock</mat-icon>
+            <mat-label>Confirm Password</mat-label>
+            <input [type]="hide ? 'password' : 'text'" formControlName="confirmPassword" matInput
+                   placeholder="Confirm Password" required
+                   type="password">
+            <mat-error *ngIf="registerForm.controls.confirmPassword.errors?.required">Confirm Password is required
+            </mat-error>
+            <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('mismatchedPasswords')">Passwords do not
+              match
+            </mat-error>
+            <button (click)="hide = !hide" class="text-muted" mat-icon-button matSuffix type="button">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="text-center mt-2">
+            <button class="uppercase" color="accent" mat-raised-button type="submit">
+              Create an Account
+            </button>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

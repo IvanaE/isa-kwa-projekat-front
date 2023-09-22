@@ -1,0 +1,40 @@
+<mat-card [class.full-width-page]="true" [ngClass]="['list-item', 'column-1']"
+          class="tema-item p-0" fxLayout="row wrap">
+
+
+  <div [fxFlex.gt-sm]="100" [fxFlex.sm]="100" class="p-3"
+       fxFlex="100">
+
+    <div class="h-100" fxLayout="column" fxLayoutAlign="start stretch">
+      <mat-card-content class="mb-0 p-0">
+
+        <h1 class="title"><a [routerLink]="['/teme', tema.id]">{{tema.naziv | translate}}</a></h1>
+        <div class="control-icons">
+          <button (click)="subscribeTo()" [disabled]="isSubscribed()" mat-button
+                  matTooltip="{{'TOOLTIP.SUBSCRIBE_TO' | translate}}">
+            <mat-icon class="mat-icon-sm">favorite_border</mat-icon>
+          </button>
+        </div>
+
+        <a href="/forumi/{{tema?.forum?.id}}" mat-button>
+          <mat-icon class="text-muted">forum</mat-icon>
+          {{tema?.forum.naziv | translate}}</a>
+
+        <div class="mt-3" fxShow="false" fxShow.gt-sm>
+          <p>{{'STRANICE.TEME.TOPICS' | translate}}{{tema.objave.length}}</p>
+        </div>
+
+      </mat-card-content>
+      <div class="sticky-footer-helper" fxFlex="grow"></div>
+      <mat-card-actions class="m-0 p-0" fxLayoutAlign="space-between center">
+        <p class="date mb-0" fxLayout="row"></p>
+        <div>
+          <a [routerLink]="['/teme', tema.id]" class="uppercase" color="primary"
+             mat-stroked-button>{{'BTN.DETAILS' | translate}}</a>
+        </div>
+      </mat-card-actions>
+    </div>
+
+  </div>
+
+</mat-card>

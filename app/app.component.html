@@ -1,0 +1,12 @@
+<div [class.main-toolbar-fixed]="settings.mainToolbarFixed"
+     [ngClass]="'pink toolbar-1'"
+     class="app"
+     id="app">
+  <router-outlet></router-outlet>
+  <ng-progress
+    [meteor]="false"
+    [spinner]="false"
+    color="pink"></ng-progress>
+</div>
+
+
