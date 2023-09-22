@@ -1,0 +1,126 @@
+{
+  "STRANICE": {
+    "HOME": {
+      "TITLE": "Forum",
+      "DESC": "ISA / KWA",
+      "FOUND": "found"
+    },
+    "NOT_FOUND": {
+      "TITLE": "404",
+      "DESC": "Oops, looks like the page you're looking for doesn't exist."
+    },
+    "TEME": {
+      "DESC": "All topics",
+      "NUM": "Number of topics: ",
+      "TOPICS": "Number of posts: "
+    }
+  },
+  "PLACEHOLDER": {
+    "NAME": "Name",
+    "EMAIL": "E-mail",
+    "MESSAGE": "Message"
+  },
+  "TOOLTIP": {
+    "REMOVE": "Remove",
+    "SUBSCRIBE_TO": "Subscribe",
+    "HIDE": "Hide",
+    "FAV": "Subscriptions",
+    "LIST_COMP": "Admin panel"
+  },
+  "COMPONENTS": {
+    "LOAD_MORE": {
+      "RESULTS": "Results",
+      "TITLE": "Load more"
+    },
+    "SHOW": "Show",
+    "FILTER": {
+      "FILTER_P": "Filter subscriptions"
+    },
+    "PRETPLATE": {
+      "COL": {
+        "ID": "Id",
+        "TYPE": "Type",
+        "TITLE": "Title",
+        "REMOVE": "Remove",
+        "ERRORL": {
+          "EMPTY": "No subscriptiions to show"
+        }
+      }
+    },
+    "PAGINATOR": {
+      "NEXT": "Next page",
+      "PREV": "Previous page",
+      "FIRST": "First page",
+      "LAST": "Last page",
+      "OF": "from",
+      "PER": "items per page"
+    }
+  },
+  "ENUMS": {
+    "SORT": {
+      "DEF": "Default",
+      "NEW": "Newest",
+      "OLD": "Oldest",
+      "POP": "Popular"
+    }
+  },
+  "MENU": "Menu",
+  "PRETPLATE": "Subscriptions",
+  "FOOTER": {
+    "TEXT1": "ISA / KWA",
+    "COPYRIGHT1": "Copyright ©",
+    "COPYRIGHT2": "All Rights Reserved"
+  },
+  "FILTER": "Filter",
+  "NAV": {
+    "HOME": "Forums",
+    "TEME": "All topics",
+    "PAGES": "Pages",
+    "LANDING": "Forums",
+    "404_PAGE": "Page not found"
+  },
+  "BTN": {
+    "ADD": "Add",
+    "SAVE": "Save",
+    "SUBMIT": "Submit",
+    "CANCEL": "Cancel",
+    "UPLOAD": "Upload",
+    "REMOVE": "Remove",
+    "YES": "Da",
+    "NO": "Ne",
+    "OK": "OK",
+    "CLEAR": "Clear",
+    "ADVANCED": "Advanced",
+    "HIDE": "Hide",
+    "CLEAR_ALL": "Clear all",
+    "DETAILS": "Details"
+  },
+  "MESSAGE": {
+    "SURE_DELETE": "Confirm deletion",
+    "FILE_SIZE": "File can't be larger than {{param}} kb.",
+    "ADDED_1": "Sucessfuly subscribed to ",
+    "ADDED_2": "!"
+  },
+  "FIELD": {
+    "NAME": "Name"
+  },
+  "SPINNER": {
+    "TEXT": "Forum"
+  },
+  "SETTINGS": {
+    "TITLE": "Settings"
+  },
+  "CONTACT": {
+    "EMAIL_TITLE": "E-MAIL",
+    "FORM": {
+      "NAME": "Name",
+      "EMAIL": "E-mail"
+    },
+    "ERRORL": {
+      "NAME": "is required",
+      "EMAIL": "is required",
+      "EMAIL_INVALID": "is invalid",
+      "MESSAGE": "is required"
+    }
+  }
+}

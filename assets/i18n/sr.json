@@ -1,0 +1,126 @@
+﻿{
+  "STRANICE": {
+    "HOME": {
+      "TITLE": "Forum",
+      "DESC": "ISA / KVA",
+      "FOUND": "pronađenih"
+    },
+    "NOT_FOUND": {
+      "TITLE": "404",
+      "DESC": "Ups, izgleda da tražena stranica ne postoji."
+    },
+    "TEME": {
+      "DESC": "Sve teme",
+      "NUM": "Broj tema: ",
+      "TOPICS": "Broj objava: "
+    }
+  },
+  "PLACEHOLDER": {
+    "NAME": "Ime",
+    "EMAIL": "E-mail",
+    "MESSAGE": "Poruka"
+  },
+  "TOOLTIP": {
+    "REMOVE": "Ukloni",
+    "SUBSCRIBE_TO": "Pretplati se",
+    "HIDE": "Sakrij",
+    "FAV": "Pretplate",
+    "LIST_COMP": "Admin panel"
+  },
+  "COMPONENTS": {
+    "LOAD_MORE": {
+      "RESULTS": "Rezultata",
+      "TITLE": "Učitaj još"
+    },
+    "SHOW": "Prikaži",
+    "FILTER": {
+      "FILTER_P": "Filtriraj pretplate"
+    },
+    "PRETPLATE": {
+      "COL": {
+        "ID": "Id",
+        "TYPE": "Tip",
+        "TITLE": "Naziv",
+        "REMOVE": "Ukloni",
+        "ERRORL": {
+          "EMPTY": "Nema pretplata za prikaz"
+        }
+      }
+    },
+    "PAGINATOR": {
+      "NEXT": "Sledeća strana",
+      "PREV": "Prethodna strana",
+      "FIRST": "Prva strana",
+      "LAST": "Poslednja strana",
+      "OF": "od",
+      "PER": "stavki po strani"
+    }
+  },
+  "ENUMS": {
+    "SORT": {
+      "DEF": "Podrazumevano",
+      "NEW": "Najnoviji",
+      "OLD": "Najstariji",
+      "POP": "Popularni"
+    }
+  },
+  "MENU": "Meni",
+  "PRETPLATE": "Pretplate",
+  "FOOTER": {
+    "TEXT1": "ISA / KVA",
+    "COPYRIGHT1": "Copyright ©",
+    "COPYRIGHT2": "All Rights Reserved"
+  },
+  "FILTER": "Filter",
+  "NAV": {
+    "HOME": "Forumi",
+    "TEME": "Sve teme",
+    "PAGES": "Stranice",
+    "LANDING": "Forumi",
+    "404_PAGE": "Stranica nije pronađena"
+  },
+  "BTN": {
+    "ADD": "Dodaj",
+    "SAVE": "Sačuvaj",
+    "SUBMIT": "Pošalji",
+    "CANCEL": "Otkaži",
+    "UPLOAD": "Otpremi",
+    "REMOVE": "Ukloni",
+    "YES": "Da",
+    "NO": "Ne",
+    "OK": "OK",
+    "CLEAR": "Poništi",
+    "ADVANCED": "Napredno",
+    "HIDE": "Sakrij",
+    "CLEAR_ALL": "Poništi sve",
+    "DETAILS": "Pregledaj"
+  },
+  "MESSAGE": {
+    "SURE_DELETE": "Potvrdite brisanje",
+    "FILE_SIZE": "Veličina fajla ne može biti veća od {{param}} kb.",
+    "ADDED_1": "Uspešno izvršena pretplata na ",
+    "ADDED_2": "!"
+  },
+  "FIELD": {
+    "NAME": "Naziv"
+  },
+  "SPINNER": {
+    "TEXT": "Forum"
+  },
+  "SETTINGS": {
+    "TITLE": "Podešavanja"
+  },
+  "CONTACT": {
+    "EMAIL_TITLE": "E-MAIL",
+    "FORM": {
+      "NAME": "Ime",
+      "EMAIL": "E-mail"
+    },
+    "ERRORL": {
+      "NAME": "je obavezno",
+      "EMAIL": "je obavezan",
+      "EMAIL_INVALID": "je neispravan",
+      "MESSAGE": "je obavezna"
+    }
+  }
+}
